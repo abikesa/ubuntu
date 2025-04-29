@@ -34,8 +34,15 @@ def main(commit_message, git_remote, ghp_remote):
     os.chdir(Path(__file__).resolve().parents[1])
 
     # Get current branch
-    current_branch = run("git branch --show-current", capture_output=True) or "main"
+    current_branch = run("git rev-parse --abbrev-ref HEAD", capture_output=True).strip()
     git_branch = click.prompt("🌿 Enter the Git branch to push to", default=current_branch, show_default=True)
+    # 🔥 NEW: Check for mismatch between active branch and branch to push
+    if current_branch != git_branch:
+        click.secho(f"⚠️  You are on branch '{current_branch}', but you are trying to push '{git_branch}'.", fg="yellow")
+        proceed = click.confirm("Continue anyway?", default=False)
+        if not proceed:
+            click.secho("🛑 Deployment aborted to prevent wrong branch push.", fg="red")
+            sys.exit(1)
 
     # Check local branch
     if not branch_exists(git_branch):

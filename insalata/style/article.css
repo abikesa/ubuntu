@@ -155,3 +155,20 @@ aside#infobox caption {
   text-align: center;
   margin: 0;
 }
+
+blockquote {
+  border-left: 1px solid #555;
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  background: none;
+  color: inherit;
+}
+
+.axiom-callout {
+  border-left: 1px solid #444; /* thinner line */
+  padding-left: 1em;
+  font-style: italic;
+  background: none;
+  margin: 1.5em 0;
+}

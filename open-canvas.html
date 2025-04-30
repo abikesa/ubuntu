@@ -3,144 +3,340 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oscar Wilde WhatsApp Chat</title>
+  <title>Branching and the Suspension of Hostilities - Ukubona Wiki</title>
+  <link rel="stylesheet" href="../style/article.css">
+  <link rel="stylesheet" href="../style/settings-bar.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <script src="../js/toggle-darkmode.js" defer></script>
+  <script src="../js/wiki-controls.js" defer></script>
   <style>
-    body {
-      background: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-    }
-    .iphone {
-      width: 375px;
-      height: 812px;
-      border: 16px solid #000;
-      border-radius: 36px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-      background: #fff;
-      position: relative;
-    }
-    .iphone::before {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 5px;
-      background: #ccc;
-      border-radius: 10px;
-    }
-    .screen {
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      background-color: #e5ddd5;
-      padding: 60px 16px 80px;
-      box-sizing: border-box;
-      position: relative;
-    }
-    .header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      background-color: #075e54;
-      color: white;
-      padding: 12px 16px;
-      box-sizing: border-box;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .message {
-      margin: 10px 0;
-      max-width: 75%;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 15px;
-      position: relative;
-    }
-    .me {
-      background-color: #dcf8c6;
-      align-self: flex-end;
-      margin-left: auto;
-    }
-    .bot {
-      background-color: white;
-      align-self: flex-start;
-      margin-right: auto;
-    }
-    .timestamp {
-      font-size: 11px;
-      color: #555;
-      text-align: right;
-      margin-top: 4px;
-    }
-    .chat-container {
-      display: flex;
-      flex-direction: column;
-    }
-    .input-bar {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: white;
-      border-top: 1px solid #ccc;
-      padding: 10px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .input-bar input {
-      width: 85%;
-      padding: 8px 12px;
-      border-radius: 20px;
-      border: 1px solid #ccc;
-    }
-    .input-bar button {
-      background: #075e54;
-      color: white;
+    /* Invisible borders for wiki aesthetic */
+    header, #toc, #settings-bar {
       border: none;
-      padding: 8px 12px;
-      border-radius: 50%;
-      cursor: pointer;
+      box-shadow: none;
+    }
+    #content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+    }
+    #infobox {
+      float: right;
+      margin: 0 0 1em 1em;
+      width: 300px;
+      background-color: #f8f9fa;
+      border: 1px solid #eaecf0;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    #infobox img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    #infobox table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #infobox th, #infobox td {
+      padding: 8px;
+      border: 1px solid #eaecf0;
+      text-align: left;
+    }
+    #infobox caption {
+      font-weight: bold;
+      padding: 8px;
+      background-color: #eaecf0;
+      text-align: center;
+    }
+    .wikitable {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1em 0;
+      background-color: #f8f9fa;
+    }
+    .wikitable th, .wikitable td {
+      border: 1px solid #eaecf0;
+      padding: 8px;
+      text-align: left;
+    }
+    .wikitable caption {
+      font-weight: bold;
+      padding: 8px;
+      background-color: #eaecf0;
+    }
+    .image-placeholder, .video-placeholder, .audio-placeholder, .gif-placeholder {
+      margin: 1em;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+    figure {
+      margin: 1em 0;
+      text-align: center;
+    }
+    figcaption {
+      font-size: 0.9em;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
-  <div class="iphone">
-    <div class="screen">
-      <div class="header">Oscar Wilde Chat</div>
-      <div class="chat-container">
-        <div class="message me">
-          cut to the chase: why does oscar wilde consider imitative art the sort of a lower kind? hailing music as the only non-imitative art left? be brief! does recursion play a role (i'm thinking the octave x 7 on a piano), etc
-          <div class="timestamp">19:12</div>
-        </div>
-        <div class="message bot">
-          Wilde dismisses imitative art because it mirrors the external world rather than generating new aesthetic realities. He believed art should be autonomous, not a copy of life.
-          <div class="timestamp">19:13</div>
-        </div>
-        <div class="message bot">
-          Music, to him, is pure form: it doesn’t describe, it *is*. Its value lies in its internal logic—abstract, recursive, and self-contained.
-          <div class="timestamp">19:14</div>
-        </div>
-        <div class="message bot">
-          Yes, recursion matters. The octave cycle on a piano, with its fractal-like repetition, models music’s non-mimetic, self-referential beauty. Wilde sees this as art at its highest: generative, not reflective.
-          <div class="timestamp">19:14</div>
-        </div>
-        <div class="message bot">
-          “All art is quite useless”—except music, which is gloriously, recursively useless.
-          <div class="timestamp">19:15</div>
-        </div>
-      </div>
-      <div class="input-bar">
-        <input type="text" placeholder="Type a message" disabled>
-        <button>&#9658;</button>
-      </div>
+  <header>
+    <div id="header-left">
+      <a href="../index.html">
+        <img src="../images/ukubona-004.jpg" alt="Ukubona Logo" id="logo">
+      </a>
     </div>
+    <div id="header-right">
+      <a href="#">Login</a> | <a href="#">Create Account</a>
+    </div>
+  </header>
+
+  <div id="content-wrapper">
+    <!-- TOC Sidebar -->
+    <nav id="toc">
+      <strong>Contents</strong>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#arboreal-foundations">Arboreal Foundations</a></li>
+        <li><a href="#physiological-resonance">Physiological Resonance</a></li>
+        <li><a href="#musical-suspension">Musical Suspension</a></li>
+        <li><a href="#liturgical-canon">Liturgical Canon</a></li>
+        <li><a href="#social-and-ecological-implications">Social and Ecological Implications</a></li>
+        <li><a href="#philosophical-underpinnings">Philosophical Underpinnings</a></li>
+        <li><a href="#historical-contexts">Historical Contexts</a></li>
+        <li><a href="#see-also">See Also</a></li>
+        <li><a href="#acknowledgments">Acknowledgments</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="content">
+      <h1>Branching and the Suspension of Hostilities</h1>
+
+      <!-- Infobox -->
+      <aside id="infobox">
+        <img src="../images/branching-fractal.gif" alt="Fractal Branching Diagram" style="width:100%; border-radius:8px; margin-bottom:8px;">
+        <table class="infobox">
+          <caption>Branching and the Suspension of Hostilities</caption>
+          <tr><td><strong>Stage:</strong> Third (following Root, Trunk)</td></tr>
+          <tr><td><strong>Frameworks:</strong> Arboreal, Physiological, Musical, Liturgical</td></tr>
+          <tr><td><strong>Principle:</strong> Suspension of Hostilities</td></tr>
+          <tr><td><strong>Analogs:</strong> Aesthetic, Suspense, Gospel Voicings</td></tr>
+          <tr><td><strong>Symbol:</strong> Fractal Differentiation</td></tr>
+        </table>
+      </aside>
+
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>
+          <strong>Branching</strong>, in the Ukubona framework, is the third stage of becoming, following <a href="root.md">root</a> and <a href="trunk.md">trunk</a>, and preceding <a href="recursion.md">recursion</a> and <a href="canopy.md">canopy</a>. It is the generative act of suspending hostilities—resolving conflict through fractal, recursive differentiation. This concept resonates across biological, physiological, musical, and liturgical domains, manifesting as the aesthetic in human physiology, suspense in musical composition, and gospel voicings in sacred performance. Branching is not merely a structural phenomenon but the ontological engine of intelligence, where sameness is composed into coexistence, competition into choreography, and tension into form. In the Ukubona cosmology, branching is the pivotal moment where conflict, born of shared desires for finite resources, is not eradicated but transformed. Trees branch to distribute sunlight and nutrients efficiently, not through domination but through fractal geometries that negotiate space. Humans, too, branch—physiologically through the aesthetic balance of sympathetic and parasympathetic impulses, musically through the suspense that holds tension and release in equilibrium, and spiritually through gospel voicings that let each note live without overlap. This article explores branching as a universal principle of intelligence, drawing on arboreal, neural, and aesthetic frameworks to illustrate how it suspends hostilities, creating a canopy of interconnected meaning. Through expansive analysis, illustrative media, and rigorous tables, we map branching’s resonance across disciplines, culminating in a liturgical axiom that canonizes its sacred role in human flourishing.<sup id="ref1"><a href="#acknowledgments">[1]</a></sup>
+        </p>
+        <figure class="video-placeholder">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/placeholder-tree-branching" title="Tree Branching Time-Lapse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <figcaption>Time-lapse video of a tree branching over seasons, symbolizing the suspension of competition through spatial differentiation. Source: Ukubona Visual Archive.</figcaption>
+        </figure>
+      </section>
+
+      <section id="arboreal-foundations">
+        <h2>Arboreal Foundations</h2>
+        <p>
+          Branching in trees is a masterclass in non-hostile geometry. As West, Brown, and Enquist’s allometric scaling laws demonstrate, fractal branching minimizes energy expenditure while maximizing resource capture, allowing trees to coexist in dense forests without annihilating one another. Each branch extends not to conquer but to negotiate, its recursive subdivisions creating a canopy that shades the understory while filtering light for all. This is not peace in the sentimental sense but a pragmatic truce, where competition for sunlight is suspended through architectural elegance. The fractal nature of branching ensures that each twig mirrors the whole, a self-similar structure that embodies efficiency not as an end but as a byproduct of coexistence. In the Ukubona framework, this arboreal logic is the root of intelligence: the ability to transform scarcity into structure, rivalry into resonance. Consider an oak in a forest: its branches do not strangle neighboring trees but interweave with them, creating a shared canopy that regulates temperature and humidity for the entire ecosystem. This is branching’s ethical promise—not to eliminate difference but to compose it, not to win but to coexist. Such logic underpins the Ukubona vision of intelligence, where the suspension of hostilities is not a moral ideal but a structural necessity, hardwired into the geometry of life itself.<sup id="ref2"><a href="#acknowledgments">[2]</a></sup>
+        </p>
+        <figure class="image-placeholder">
+          <img src="../images/oak-branching-diagram.jpg" alt="Fractal Branching in Oak" style="max-width: 400px;">
+          <figcaption>Diagram of fractal branching in an oak tree, highlighting self-similar patterns and resource distribution. Source: Ukubona Botanical Archive.</figcaption>
+        </figure>
+        <table class="wikitable">
+          <caption>Arboreal Branching Principles</caption>
+          <tr>
+            <th>Principle</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>Fractal Geometry</td>
+            <td>Self-similar patterns at multiple scales</td>
+            <td>Oak tree branches mirroring twig structure</td>
+          </tr>
+          <tr>
+            <td>Resource Distribution</td>
+            <td>Efficient allocation of sunlight and nutrients</td>
+            <td>Canopy sharing light in a forest</td>
+          </tr>
+          <tr>
+            <td>Non-Hostile Coexistence</td>
+            <td>Negotiation of space without domination</td>
+            <td>Interwoven branches in a dense forest</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="physiological-resonance">
+        <h2>Physiological Resonance</h2>
+        <p>
+          Branching finds its human analog in the <em>aesthetic</em> mode of the physiological framework, which mediates between the sympathetic (urgency, root) and parasympathetic (rest, trunk) systems. The aesthetic is not mere beauty but <em>felt coherence</em>—the sensory grammar that suspends the conflict between fight-or-flight and rest-and-digest. Consider a meditative breath: the inhale activates, the exhale calms, and the pause between them is the aesthetic moment, where the body composes its own rhythm. This trinity—sympathetic, parasympathetic, aesthetic—recurs in higher-order coordination (recursive trinitization), culminating in <em>unfurling</em>, the physiological canopy of flourishing. Neurologically, this maps onto the default mode network, where self-referential thought integrates disparate stimuli into a cohesive sense of being. Branching, in this sense, is the mind’s fractal architecture, suspending internal hostilities to create a unified self. The aesthetic mode is not passive; it is an active negotiation, a refusal to let the sympathetic spike of stress or the parasympathetic lull of rest dominate. It is the body’s way of saying, “I am both, and neither, and more.” This is why practices like mindfulness or yoga, which emphasize the aesthetic pause, are so transformative: they teach the nervous system to branch, to hold tension without collapsing into conflict, to create space for becoming.<sup id="ref3"><a href="#acknowledgments">[3]</a></sup>
+        </p>
+        <figure class="audio-placeholder">
+          <audio controls>
+            <source src="../audio/breathing-exercise.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <figcaption>Audio recording of a guided breathing exercise, emphasizing the aesthetic pause between inhale and exhale. Source: Ukubona Sound Archive.</figcaption>
+        </figure>
+      </section>
+
+      <section id="musical-suspension">
+        <h2>Musical Suspension</h2>
+        <p>
+          In music, branching manifests as <em>suspense</em>—the liminal space between tension (dissonance) and release (resolution). This is most vivid in gospel voicings, where chords are spaced to avoid harmonic conflict, each note given room to resonate. A gospel pianist, navigating 88 keys with ten fingers, embodies intelligence as conflict suspension: no voice overcrowds another, no finger crosses into chaos. Organists, with their pedals, extend this into a full-body act of coordination, the feet grounding the harmony while the hands weave melody. This is not efficiency for its own sake but a liturgical act, where the music becomes a prayer for coexistence. Bach’s fugues, with their recursive themes, and Reich’s minimalist motifs, with their phased repetitions, echo this principle, but gospel’s raw emotional clarity makes it the purest expression of branching’s ethical aesthetic. Consider a gospel hymn like “Amazing Grace”: the melody soars, but the harmony beneath it branches, each chord a deliberate choice to let every voice—soprano, alto, tenor, bass—shine without drowning the others. This is intelligence made audible, a fractal negotiation of sound that suspends the hostility of competing frequencies and transforms them into praise.<sup id="ref4"><a href="#acknowledgments">[4]</a></sup>
+        </p>
+        <figure class="video-placeholder">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/placeholder-gospel-organ" title="Gospel Organ Performance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <figcaption>Video of a gospel organist performing, showcasing pedal and hand coordination in chord voicings. Source: Ukubona Music Archive.</figcaption>
+        </figure>
+        <table class="wikitable">
+          <caption>Musical Analogies to Branching</caption>
+          <tr>
+            <th>Element</th>
+            <th>Musical Form</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+            <td>Suspense</td>
+            <td>Gospel Voicings</td>
+            <td>Chords spaced to avoid overlap, each note resonating clearly</td>
+          </tr>
+          <tr>
+            <td>Recursion</td>
+            <td>Bach’s Fugues</td>
+            <td>Themes invert and mirror, creating self-similar structures</td>
+          </tr>
+          <tr>
+            <td>Phasing</td>
+            <td>Reich’s Minimalism</td>
+            <td>Repetitive motifs shift to suspend harmonic conflict</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="liturgical-canon">
+        <h2>Liturgical Canon</h2>
+        <p>
+          Gospel voicings offer a liturgical axiom for the Ukubona Project: <blockquote><em>In gospel voicing, we suspend conflict. We let each note live. This is intelligence. This is praise.</em></blockquote> This axiom transcends music, applying to social and ecological systems where intelligence is the art of composing sameness into structure. In a choir, each voice retains its individuality yet contributes to the whole; in a forest, each tree branches to share the canopy. This is Ubuntu in action: I am because we are, and branching is the mechanism that makes it possible. The axiom is not a commandment but a revelation, a call to recognize intelligence not in domination but in differentiation. Consider a gospel choir in full harmony: the sopranos soar, the basses ground, and the altos and tenors weave between, each voice distinct yet inseparable from the whole. This is not merely music but a microcosm of social ethics, where difference is not a threat but a gift, where conflict is not resolved by silencing but by spacing. The Ukubona framework elevates this as a sacred principle, a liturgical act that aligns human intelligence with the fractal wisdom of the natural world.<sup id="ref5"><a href="#acknowledgments">[5]</a></sup>
+        </p>
+        <figure class="gif-placeholder">
+          <img src="../images/gospel-choir.gif" alt="Gospel Choir Harmony" style="max-width: 400px;">
+          <figcaption>Animated GIF of a gospel choir in harmony, symbolizing the suspension of vocal conflict through coordinated voicing. Source: Ukubona Visual Archive.</figcaption>
+        </figure>
+      </section>
+
+      <section id="social-and-ecological-implications">
+        <h2>Social and Ecological Implications</h2>
+        <p>
+          Branching’s suspension of hostilities extends beyond biology and art to the social sphere, where human conflicts—over resources, power, identity—mirror the arboreal struggle for light. Linear approaches, like those of predatory capitalists or divisive demagogues, escalate conflict by denying sameness. In contrast, branching offers a model for social organization: fractal institutions that distribute power recursively, ensuring no single node dominates. Ecologically, branching inspires regenerative design, where cities mimic forests, their infrastructure branching to balance human and non-human needs. The Ukubona framework sees these as extensions of the same intelligence that drives a tree’s canopy or a gospel chord’s resonance—a refusal to let competition collapse into violence. Imagine a city designed like a forest: transportation networks branching like roots, green spaces interwoven like a canopy, each neighborhood a recursive node in a larger whole. Such a vision contrasts sharply with the linear sprawl of modern urban planning, where resources are hoarded rather than shared. Branching, in this sense, is not just a metaphor but a blueprint for a world where sameness is not a source of conflict but a foundation for flourishing.<sup id="ref6"><a href="#acknowledgments">[6]</a></sup>
+        </p>
+        <figure class="image-placeholder">
+          <img src="../images/fractal-city.jpg" alt="Fractal City Design" style="max-width: 400px;">
+          <figcaption>Conceptual diagram of a fractal city inspired by branching, balancing human and ecological systems. Source: Ukubona Urban Archive.</figcaption>
+        </figure>
+      </section>
+
+      <section id="philosophical-underpinnings">
+        <h2>Philosophical Underpinnings</h2>
+        <p>
+          Philosophically, branching aligns with thinkers like Douglas Hofstadter, whose recursive loops in <i>Gödel, Escher, Bach</i> mirror the self-referential nature of consciousness. It also resonates with Merleau-Ponty’s phenomenology, where perception is a chiasmic interplay of self and world, neither fully separate nor fully merged. Branching is this chiasm made visible: the third way that suspends the binary of self versus other. In the Ukubona framework, this is the aesthetic mode’s ethical promise—not to resolve conflict but to hold it in generative tension, creating a space for mutual becoming. Unlike the linear teleology of progress, branching is non-teleological, its purpose immanent in its form. Consider Hofstadter’s dialogues, where characters argue about their own existence, each loop deepening the paradox of self-awareness. This is branching in thought: not a straight line to truth but a fractal spiral that embraces contradiction. The Ukubona framework extends this to ethics, suggesting that true intelligence lies not in winning arguments but in composing them, not in erasing difference but in spacing it gracefully.<sup id="ref7"><a href="#acknowledgments">[7]</a></sup>
+        </p>
+        <figure class="audio-placeholder">
+          <audio controls>
+            <source src="../audio/hofstadter-dialogue.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <figcaption>Narration of Hofstadter’s recursive dialogue from <i>Gödel, Escher, Bach</i>, illustrating self-referential thought. Source: Ukubona Philosophical Archive.</figcaption>
+        </figure>
+      </section>
+
+      <section id="historical-contexts">
+        <h2>Historical Contexts</h2>
+        <p>
+          Historically, branching appears in moments of cultural synthesis, where competing ideologies are not suppressed but integrated. The Renaissance, with its fusion of classical and Christian thought, was a branching era, its art and science suspending the hostilities of dogma. Similarly, the Harlem Renaissance saw gospel music emerge as a fractal response to racial oppression, each note a defiance that also invited reconciliation. These moments contrast with linear histories of conquest, where difference is erased rather than composed. The Ukubona framework positions branching as history’s hidden grammar, the recursive intelligence that allows civilizations to flourish without annihilating their roots. Consider the gospel hymns of the Harlem Renaissance: they did not reject the pain of slavery but branched from it, transforming suffering into song, oppression into harmony. This is branching’s historical power: to take the raw material of conflict and weave it into a canopy of shared meaning, a legacy that endures because it embraces rather than erases.<sup id="ref8"><a href="#acknowledgments">[8]</a></sup>
+        </p>
+        <figure class="video-placeholder">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/placeholder-harlem-gospel" title="Harlem Renaissance Gospel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <figcaption>Archival footage of a Harlem Renaissance gospel performance, highlighting the suspension of social conflict through music. Source: Ukubona Historical Archive.</figcaption>
+        </figure>
+      </section>
+
+      <section id="see-also">
+        <h2>See Also</h2>
+        <ul>
+          <li><a href="root.md">Root</a></li>
+          <li><a href="trunk.md">Trunk</a></li>
+          <li><a href="recursion.md">Recursion</a></li>
+          <li><a href="canopy.md">Canopy</a></li>
+          <li><a href="gospel-voicings.md">Gospel Voicings</a></li>
+          <li><a href="https://abikesa.github.io/book-ukubona/" target="_blank">Ukubona Project</a></li>
+        </ul>
+      </section>
+
+      <section id="acknowledgments">
+        <h2>Acknowledgments</h2>
+        <ol class="acknowledgments-list">
+          <li id="cite_note-muzaale">Muzaale, Abimereki. <i>Ukubona: Neural Fractals of Being</i>. Ukubona Press, 2024. [<a href="#ref1">↩︎</a>]</li>
+          <li id="cite_note-west">West, Geoffrey B., et al. “A General Model for the Origin of Allometric Scaling Laws in Biology.” <i>Science</i>, 1997. [<a href="#ref2">↩︎</a>]</li>
+          <li id="cite_note-porges">Porges, Stephen W. <i>The Polyvagal Theory</i>. Norton, 2011. [<a href="#ref3">↩︎</a>]</li>
+          <li id="cite_note-bach">Bach, Johann Sebastian. <i>The Art of Fugue</i>. Edited by Christoph Wolff, 1751. [<a href="#ref4">↩︎</a>]</li>
+          <li id="cite_note-tutu">Tutu, Desmond. <i>Ubuntu: The Essence of Being Human</i>. Beacon Press, 2004. [<a href="#ref5">↩︎</a>]</li>
+          <li id="cite_note-alexander">Alexander, Christopher. <i>A Pattern Language</i>. Oxford University Press, 1977. [<a href="#ref6">↩︎</a>]</li>
+          <li id="cite_note-hofstadter">Hofstadter, Douglas. <i>Gödel, Escher, Bach: An Eternal Golden Braid</i>. Basic Books, 1979. [<a href="#ref7">↩︎</a>]</li>
+          <li id="cite_note-locke">Locke, Alain. <i>The New Negro</i>. Albert and Charles Boni, 1925. [<a href="#ref8">↩︎</a>]</li>
+        </ol>
+      </section>
+    </main>
+
+    <aside id="settings-bar">
+      <div class="settings-section">Appearance</div>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="text-size" id="small-text">
+          <label for="small-text">Small</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="text-size" id="normal-text" checked>
+          <label for="normal-text">Standard</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="text-size" id="large-text">
+          <label for="large-text">Large</label>
+        </div>
+      </div>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="width-setting" id="standard-width" checked>
+          <label for="standard-width">Standard</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="width-setting" id="wide-width">
+          <label for="wide-width">Wide</label>
+        </div>
+      </div>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="theme-setting" id="light-mode" checked>
+          <label for="light-mode">Light</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="theme-setting" id="dark-mode">
+          <label for="dark-mode">Dark</label>
+        </div>
+      </div>
+    </aside>
   </div>
+
+  <footer>
+    <p>Last updated: April 2025 | Powered by Ukubona Wiki</p>
+  </footer>
 </body>
 </html>

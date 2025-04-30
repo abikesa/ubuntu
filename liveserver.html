@@ -22,6 +22,14 @@
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
       background: #fff;
       position: relative;
+      animation: vibrate 0.2s ease-in-out 4 alternate;
+    }
+    @keyframes vibrate {
+      0% { transform: translate(0); }
+      25% { transform: translate(2px, 1px); }
+      50% { transform: translate(-2px, -1px); }
+      75% { transform: translate(2px, -1px); }
+      100% { transform: translate(-2px, 1px); }
     }
     .iphone::before {
       content: "";
@@ -133,6 +141,10 @@
         </div>
         <div class="message bot">
           “All art is quite useless”—except music, which is gloriously, recursively useless.
+          <div class="timestamp">19:15</div>
+        </div>
+        <div class="message bot">
+          Really, imitating reality? One might as well paint a mirror and call it genius.
           <div class="timestamp">19:15</div>
         </div>
       </div>

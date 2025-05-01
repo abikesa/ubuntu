@@ -64,3 +64,4 @@ Do not attempt compilation.
 # flick 20250430132628-AYIf
 # flick 20250501004530-LtHS
 # flick 20250501095842-mVVK
+# flick 20250501104609-nZsQ

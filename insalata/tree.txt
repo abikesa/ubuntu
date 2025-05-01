@@ -29,7 +29,7 @@
 │   ├── 📄 paella.html
 │   ├── 📄 symbolic-logic.html
 │   ├── 📄 template.html
-│   ├── 📄 theory-of-relativity.html
+│   ├── 📄 theory-of-relativity.html`
 │   ├── 📄 your-article-title.html
 ├── 📓 create-new-article.md
 ├── favicon.ico

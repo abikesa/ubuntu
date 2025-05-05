@@ -44,11 +44,12 @@ nav#toc {
 }
 
 main#content {
-  background-color: #ffffff;
+  background-color: var(--bg-main);
   padding: 2em;
   max-width: 800px;
   margin: 0 auto;
 }
+
 
 aside#settings-bar {
   background-color: #f8f9f9;
@@ -207,4 +208,82 @@ blockquote {
   font-weight: bold;
   cursor: pointer;
   z-index: 10000;
+}
+
+/* === Dark Mode Support === */
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-box: #f9f9f9;
+  --text-main: #202122;
+  --text-muted: #777;
+  --border-color: #eaecf0;
+}
+
+html[data-theme="dark"] {
+  --bg-main: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-box: #2a2a2a;
+  --text-main: #f5f5f5;
+  --text-muted: #aaaaaa;
+  --border-color: #444;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+header,
+nav#toc,
+aside#settings-bar,
+aside#infobox,
+.wikitable,
+blockquote,
+.quote-callout {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+}
+
+.wikitable caption,
+aside#infobox caption,
+aside#infobox th {
+  background-color: var(--bg-box);
+}
+
+.wikitable th,
+.wikitable td,
+aside#infobox td {
+  border-color: var(--border-color);
+}
+
+footer {
+  color: var(--text-muted);
+}
+
+.image-placeholder {
+  background-color: var(--bg-box);
+  border-color: var(--border-color);
+}
+
+#lightbox-modal {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-box: #f9f9f9;
+  --text-main: #202122;
+  --text-muted: #777;
+  --border-color: #eaecf0;
+}
+
+html[data-theme="dark"] {
+  --bg-main: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-box: #2a2a2a;
+  --text-main: #f5f5f5;
+  --text-muted: #aaa;
+  --border-color: #444;
 }

@@ -80,3 +80,9 @@ Compare trial vs default risks in a visual story.# flick 20250409213605-fUWd
 # flick 20250430235654-Pr4E
 # flick 20250501010527-exgg
 # flick 20250501104608-Cnac
+# flick 20250502052353-vmAf
+# flick 20250502145433-ryHh
+# flick 20250502160305-rToy
+# flick 20250504224450-7F4K
+# flick 20250504232929-R3ND
+# flick 20250505000813-lwJv

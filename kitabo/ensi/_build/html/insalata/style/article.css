@@ -287,3 +287,89 @@ html[data-theme="dark"] {
   --text-muted: #aaa;
   --border-color: #444;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  header, footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #toc {
+    display: none;
+  }
+
+  #content-wrapper {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+
+  #content {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  aside#infobox, .image-placeholder {
+    float: none !important;
+    margin: 1em auto;
+    width: 100% !important;
+    max-width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  aside#settings-bar {
+    display: none; /* optional: you can turn this into a floating toggle button instead */
+  }
+
+  .wikitable {
+    font-size: 0.95em;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul, ol {
+    padding-left: 1.2em;
+  }
+
+  .references-list {
+    padding-left: 1.4em;
+  }
+
+  .radio-group label {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  #toc-toggle {
+    display: block;
+  }
+
+  #toc {
+    display: none; /* hidden by default on mobile */
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 1em;
+    max-width: 80%;
+    z-index: 998;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}

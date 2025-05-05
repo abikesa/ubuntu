@@ -52,4 +52,18 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+    // === Mobile TOC Toggle ===
+    const tocToggleBtn = document.getElementById('toc-toggle');
+    const toc = document.getElementById('toc');
+  
+    if (tocToggleBtn && toc) {
+      tocToggleBtn.addEventListener('click', () => {
+        if (toc.style.display === 'block') {
+          toc.style.display = 'none';
+        } else {
+          toc.style.display = 'block';
+        }
+      });
+    }
+  
 });

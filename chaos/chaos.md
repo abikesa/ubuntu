@@ -83,3 +83,4 @@ Do not attempt compilation.
 # flick 20250505165401-Uw62
 # flick 20250505200943-stMK
 # flick 20250506161613-yvif
+# flick 20250506164932-MDCV

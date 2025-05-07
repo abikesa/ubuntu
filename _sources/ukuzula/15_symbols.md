@@ -80,3 +80,4 @@ Our symbols compress epistemic states:
 # flick 20250505185111-d87c
 # flick 20250506210512-5HNN
 # flick 20250507144804-SpQO
+# flick 20250507145313-dk80

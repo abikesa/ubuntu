@@ -87,7 +87,7 @@ pdf.chapter_body(
     "baseline estimation and risk modeling diverge into predictive domains: comorbidity, hospitalization, frailty. "
     "Yet institutional response to this integration has been uneven. Key actors in the data pipeline—such as the "
     "guardian of registry access—have failed to respond substantively to analytic requests, redirecting responsibility "
-    "to others (e.g., Allan Massie), despite their own supervisory role on multiple overlapping grants."
+    "to others (e.g.,  Aaron Miller), despite their own supervisory role on multiple overlapping grants."
 )
 
 # Save PDF

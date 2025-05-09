@@ -1,36 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.documentElement;
-  const light = document.getElementById('light-mode');
-  const dark = document.getElementById('dark-mode');
   const logo = document.getElementById('logo');
+  const lightRadio = document.getElementById('light-mode');
+  const darkRadio = document.getElementById('dark-mode');
+  const toggleBtn = document.getElementById('toggle-theme');
 
-  const LIGHT_LOGO = '../../the-rug/figures/ukubona-006.jpg';
-  const DARK_LOGO = '../../the-rug/figures/ukubona-006-dm.jpg';
+  // 🧭 Dynamically determine logo path depth
+  const pathDepth = window.location.pathname.split('/').length - 1;
+  const imagePrefix = pathDepth > 2 ? '../images/' : 'images/';
+  const LIGHT_LOGO = imagePrefix + 'ukubona-light-fixed.png';
+  const DARK_LOGO = imagePrefix + 'ukubona-dark-fixed.png';
 
-  // Apply stored theme and logo
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme) {
-    html.setAttribute('data-theme', storedTheme);
-    (storedTheme === 'dark' ? dark : light).checked = true;
-    logo.src = storedTheme === 'dark' ? DARK_LOGO : LIGHT_LOGO;
-  } else {
-    // Default to light mode
-    logo.src = LIGHT_LOGO;
+  // ⚙️ Theme setter
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (logo) logo.src = theme === 'dark' ? DARK_LOGO : LIGHT_LOGO;
+    if (toggleBtn) toggleBtn.textContent = theme === 'dark' ? '🌙' : '🌞';
   }
 
-  light.addEventListener('change', () => {
-    if (light.checked) {
-      html.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-      logo.src = LIGHT_LOGO;
-    }
+  // ⏳ Load stored theme or fallback
+  const storedTheme = localStorage.getItem('theme') || 'light';
+  setTheme(storedTheme);
+  if (lightRadio && darkRadio) {
+    (storedTheme === 'dark' ? darkRadio : lightRadio).checked = true;
+  }
+
+  // 🎚️ Theme switching controls
+  if (lightRadio) lightRadio.addEventListener('change', () => {
+    if (lightRadio.checked) setTheme('light');
   });
 
-  dark.addEventListener('change', () => {
-    if (dark.checked) {
-      html.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-      logo.src = DARK_LOGO;
-    }
+  if (darkRadio) darkRadio.addEventListener('change', () => {
+    if (darkRadio.checked) setTheme('dark');
+  });
+
+  if (toggleBtn) toggleBtn.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
   });
 });

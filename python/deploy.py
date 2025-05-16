@@ -114,7 +114,13 @@ def main(commit_message, git_remote, ghp_remote):
 
     if remote_branch_exists:
         click.secho("🔄 Fetching remote changes...", fg="cyan")
-        run(f"git fetch {git_remote}")
+        try:
+            run(f"git fetch {git_remote}")
+        except subprocess.CalledProcessError:
+            click.secho("🧹 Detected fetch error. Pruning remote refs and retrying...", fg="yellow")
+            run(f"git remote prune {git_remote}")
+            run(f"git fetch {git_remote}")
+
         click.secho("🔀 Rebasing local changes...", fg="cyan")
         try:
             run(f"git rebase {git_remote}/{git_branch}")
